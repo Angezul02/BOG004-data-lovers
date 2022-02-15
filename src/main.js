@@ -7,7 +7,14 @@
 
 document.getElementById("buttonOne").addEventListener("click", () =>{
   document.getElementById("firtsPage1").style.display="none";
-  document.getElementById("footerFirsPage").style.display="none";
-  document.getElementById("secondPage2").style.display="none";
-  console.log("God night");
+  /*document.getElementById("footerFirsPage").style.display="none";*/
+  document.getElementById("secondPage2").style.display="block";
+  
 })
+
+document.getElementById("buttonhome").addEventListener("click", () =>{
+  document.getElementById("secondPage2").style.display="none";
+  document.getElementById("firtsPage1").style.display="block";
+   
+})
+

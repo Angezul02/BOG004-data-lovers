@@ -217,3 +217,271 @@ align-items: center;
 #secondPage2{
   display: none;
 }
+/* desde aqui+*/
+.pageSecond{
+  /*border: 2px solid red;*/
+  display: flex;
+  position: fixed;
+  width: 100%;
+  max-height: 100%;
+  bottom: 0%;
+  top: 0%;
+  
+}
+
+.pageSecond{
+  background-image: url(data/Img/Fondopantalla2\ \(2\).jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+
+} 
+
+.lupa{
+  display: flex;
+  position: fixed;
+  width: 7%;
+  height:5%;
+  left: 48%;
+  top:2%;
+}
+
+.imgLupa{
+  width: 100%;
+  height: 100%;
+     
+}
+
+.titleSecond{
+  /*border: 2px solid rgb(58, 3, 21);*/
+  margin: 3%;
+  display: flex;
+  position: fixed;
+}
+
+#titlesecondPage{
+  max-width: 45%;
+ 
+}
+
+
+.containerHomePage{
+  display: flex;
+  position: fixed;
+  max-width: max-content;
+  min-width: min-content;
+  left: 75%;
+  top: 8%;
+  
+}
+
+.homepage{
+  border-radius: 5px;
+  background: #F2E03B;
+  border-bottom: #3C73FE;
+  font-family: 'Handlee', cursive;
+}
+
+#search{
+  position: relative;
+  font-family: 'Handlee', cursive;
+  border-radius: 7px;
+  background: #F2E03B;
+  border: 2px solid #3C73FE;
+  box-sizing: border-box;
+  max-width: 90%;
+  
+}
+
+.searchPokemon{
+  /*border: 2px solid green;*/
+  position: fixed;
+  left: 57%;
+  top: 2.5%;
+  
+}
+
+.sectionFooter{
+  /*border: 2px solid black;*/
+  position: fixed;
+  top:91%;   
+  
+}
+
+.gifpokeball{
+  /*border: 2px solid purple;*/
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  top: 80%;
+     
+} 
+
+.pokeball{
+  /*border: 2px solid greenyellow;*/
+  width: 50%;
+  height: 100%;
+
+}
+
+.containerCard{
+  /*border: 2px solid black;*/
+  background: rgba(192, 242, 218, 0.56);
+  border-radius: 10px;
+  position: fixed;
+  width: 70%;
+  height: 65%;
+  left: 15%;
+  top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.cardPokemon{
+  border: 2px solid green;
+  width: 80%;
+  height: 35%;
+  border-radius: 10px;
+  background-color: rgba(3, 29, 16, 0.77);
+
+}
+
+/*ajuste segunda página para celular*/
+
+@media (max-width:750px)  {
+
+  /*.pageSecond{
+    border: 2px solid red;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    max-height: 100%;
+    bottom: 0%;
+    top: 0%;
+    
+  }
+
+  .pageSecond{
+    background-image: url(data/Img/Fondopantalla2\ \(2\).jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+
+  } 
+
+  .lupa{
+    display: flex;
+    position: fixed;
+    width: 7%;
+    height:5%;
+    left: 48%;
+    top:2%;
+  }
+
+  .imgLupa{
+    width: 100%;
+    height: 100%;
+       
+  }
+
+  .titleSecond{
+    border: 2px solid rgb(58, 3, 21);
+    margin: 3%;
+    display: flex;
+    position: fixed;
+  }
+
+  #titlesecondPage{
+    max-width: 45%;
+   
+  }*/
+
+  /*#search{
+    position: relative;
+    font-family: 'Handlee', cursive;
+    border-radius: 7px;
+    background: #F2E03B;
+    border: 2px solid #3C73FE;
+    box-sizing: border-box;
+    max-width: 90%;
+    
+  }
+
+  .searchPokemon{
+    border: 2px solid green;
+    position: fixed;
+    left: 57%;
+    top: 2.5%;
+    
+  }*/
+
+  /*.sectionFooter{
+    border: 2px solid black;
+    position: fixed;
+    top:91%;   
+    
+  }
+
+  .gifpokeball{
+    border: 2px solid purple;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 80%;
+       
+  } 
+
+  .pokeball{
+    border: 2px solid greenyellow;
+    width: 50%;
+    height: 100%;
+
+  }
+
+  .containerCard{
+    border: 2px solid black;
+    background: rgba(192, 242, 218, 0.56);
+    border-radius: 10px;
+    position: fixed;
+    width: 70%;
+    height: 65%;
+    left: 15%;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .cardPokemon{
+    border: 2px solid green;
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    background-color: rgba(3, 29, 16, 0.77);
+  
+  }
+
+    .containerHomePage{
+    display: flex;
+    position: fixed;
+    max-width: max-content;
+    min-width: min-content;
+    left: 75%;
+    top: 8%;
+    
+  }
+
+  .homepage{
+    border-radius: 5px;
+    background: #F2E03B;
+    border-bottom: #3C73FE;
+    font-family: 'Handlee', cursive;
+  }*/
+}
+  
+
+
+
