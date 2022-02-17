@@ -13,12 +13,7 @@ const paintData = (data) => {
   data.forEach((elemento) => {
 
     /*  Declaramos la variable  typeImg para guardar los iconos del tipo de Pokemon despues de recorrer el array con forEach y lo utilizamos para mostrarlo en la etiqueta img*/
-    let typeImg = "";
-    elemento.type.forEach((typePoke) => {
-      let typePokemonImg = "./data/Img/icons/" + typePoke + ".webp";
-      typeImg = typePokemonImg;
-      console.log(typeImg);
-    });
+    let typeImg = elemento.type
 
     /* Declaramos la variable  resistantPokemon para guardar los iconos de resistencia de Pokemon despues de recorrer el array con forEach y lo utilizamos para mostrarlo en la etiqueta img */
     let resistantPokemon = "";
@@ -41,7 +36,9 @@ const paintData = (data) => {
         <h3 class="namePokemon">${elemento.name}</h3>
         <h4 class="numPokemon">${elemento.num}</h4>
         <h3 class="typePokemonName">Type</h3>
-        <img class="imgTypePokemon" src="${typeImg}"/>
+        <div class="typePokeImg">
+          ${typeImg.map((e) =>`<img class="imgTypePokemon" src="./data/Img/icons/${e}.webp"/>`  ).join("")}
+        </div>
         <table class="tableSize">
         <tr>
           <th>Heigth</th>
@@ -78,6 +75,7 @@ const paintData = (data) => {
     </div>
     `;
     pokemonsInformation += boxPokemon;
+    console.log("Esto es caja de pokemones" ,boxPokemon);
   });
   rootDiv.innerHTML = pokemonsInformation;
 };
