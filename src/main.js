@@ -23,6 +23,8 @@ const paintData = (data) => {
         
         <h3>Heigth</h3> 
         <p>${elemento.size.height}</p>
+        <p>${elemento.stats}</p>
+        
 
       </div>
       <div class="containerDataCardReverse">
