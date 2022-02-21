@@ -51,15 +51,16 @@ const paintData = (data) => {
         
       </div>
       <div class="containerDataCardReverse">
-      <h3>Resistant</h3> 
+      <img class="pokemonImgReverse" src="${elemento.img}"/>
+      <h3 class=tittleResist >Resistant</h3> 
       <div class="containerResistantImg"> 
         ${resistantPokemon}
       </div>
-      <h3>Weaknesses</h3> 
+      <h3 class= tittleWeak >Weaknesses</h3> 
       <div class="containerWeakImg"> 
         ${weaknessesPokemon}
       </div>
-      <table>
+      <table class= "tablePokemonStats">
       <tr>
       <th>Attack</th>
       <th>Defense</th>

@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
 
-
-body{
-  /*border: 5px solid yellowgreen; */
-  width: 100%; 
+body {
+ 
+  background-color: rgba(250, 225, 247, 0.753);
+  width: 100%;
   height: 100vh;
   margin: 0;
   overflow: hidden;
 }
 .firtsPage {
-  /* border:1px solid rgba(255, 0, 0, 0); */
+  
   width: 100%;
   height: 90vh;
   top: 0%;
@@ -20,6 +20,7 @@ body{
 }
 
 .imgBackground {
+
   background-image: url("./data/Img/eevee.jpg");
   background-position: center center;
   background-size: 100% 100%, 100% 100%;
@@ -31,136 +32,108 @@ body{
   z-index: -1;
 }
 
-.titlePage{
+.titlePage {
+
   position: relative;
   top: 6%;
   left: 20%;
   width: 60%;
   height: 10%;
-  /* border: 2px solid violet; */
   margin: 0;
 }
-#titleFirstPage{
-  position: absolute;
-  /* border: 2px solid black; */
-  width: 100%;
-  height: 100%;
-}
-.containers{
+#titleFirstPage {
 
-width: 70%;
-height: 42%;
-margin-left: 41%;
-margin-top: 22%;
-display: flex;
-align-items: center;
-}
-.iconPokeball{
-  border: 2px solid blue;
-  width: 15%;
-  height: 100%;
-  margin: 0%;
-  flex-direction: column;
-  text-align: center;
-}
-.imgPokeball{
+  position: absolute;
   width: 100%;
-  height: 15%;
+  height: 100%;
 }
-#pokeballOne{
-  border: 2px solid violet;
-  margin-top: 30%;
-  margin-bottom: 10%;
+.containers {
+
+  width: 70%;
+  height: 42%;
+  margin-left: 41%;
+  margin-top: 22%;
+  display: flex;
+  align-items: center;
 }
-#pokeballTwo{
-  border: 2px solid violet;
-  margin-top: 20%;
-  margin-bottom: 10%;
-}
-#pokeballThree{
-  border: 2px solid violet;
-  margin-top: 20%;
-  margin-bottom: 10%;
-}
-#pokeballFour{
-  /* border: 2px solid violet; */
-  margin-top: 20%;
-  margin-bottom: 10%;
-}
-.navigationMenu{
-  /* border: 2px solid yellow; */
+
+.navigationMenu {
+  
   width: 60%;
   height: 100%;
   margin: 0%;
   margin-top: 0%;
   margin-left: 16%;
-  
 }
-.menuButtons{
+.menuButtons {
+
   font-size: 13px;
   font-weight: 700;
-  font-family: 'Handlee', cursive;
-  /* border: 4px inset rgba(131, 203, 243, 0.42); */
+  font-family: "Handlee", cursive;
   border-radius: 20px 20px;
   padding: 3%;
   width: 100%;
   height: 15%;
-  box-shadow: 2px 5px 6px rgb(154, 213, 236);;
-  color: #655C61;
+  box-shadow: 2px 5px 6px rgb(154, 213, 236);
+  color: #655c61;
 }
-#buttonOne{
+#buttonOne {
+
   margin-top: 7%;
   margin-bottom: 5%;
   background: #f2d6a2d0;
   border: 2px inset #dab879d7;
   padding-top: 1%;
-  
 }
-#buttonTwo{
+#buttonTwo {
+
   margin-top: 5%;
   margin-bottom: 5%;
   background: #f2d6a2d0;
   border: 2px inset #dab879d7;
 }
-#buttonThree{
+#buttonThree {
+
   margin-top: 5%;
   margin-bottom: 5%;
   background: #f2d6a2d0;
   border: 2px inset #dab879d7;
   padding-top: 1%;
 }
-#buttonFour{
+#buttonFour {
+
   margin-top: 5%;
   margin-bottom: 5%;
   background: #f2d6a2d0;
   border: 2px inset #dab879d7;
 }
 
-.titleFirstPage{
+.titleFirstPage {
+
   width: 100%;
   height: 15%;
 }
-.sectionFooter{
-    /* border:5px solid purple; */
-    width: 100%;
-    height: 10vh; 
-    background-color: #655C61;
-  }
+.sectionFooter {
+  
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(86, 52, 88);
+}
 
-#authors{
-  /* border: 2px solid violet; */
+#authors {
+  
   position: fixed;
-  vertical-align:middle;
-  font-family: 'Handlee', cursive;
+  vertical-align: middle;
+  font-family: "Handlee", cursive;
   color: rgb(154, 213, 236);
   top: 92.5%;
   font-weight: 100;
   font-size: 13px;
   right: 5%;
-  
 }
-.socialMediaIcons1{
-  /* border: 2px solid salmon; */
+.socialMediaIcons1 {
+  
+  display: flex;
   position: fixed;
   flex-direction: row;
   width: 35%;
@@ -168,171 +141,132 @@ align-items: center;
   top: 93%;
   left: 5%;
 }
-#instagramIcon{
-  width: 22%;
-  height: 100%;
-}
-#facebookIcon{
-  width: 22%;
-  height: 100%;
-}
-#youtubeIcon{
-  width: 22%;
-  height: 100%;
-}
-#twitterIcon{
-  width: 22%;
-  height: 100%;
-}
-#firtsPage1{
+
+#firtsPage1 {
   display: block;
 }
-  
 
 /* desde aqui diseño segunda página*/
-.pageSecond{
-  /* border: 2px solid red; */
+
+.pageSecond {
+  
   display: flex;
   display: none;
   position: absolute;
   width: 100%;
   height: 90vh;
-  
   top: 0%;
- 
 }
 
-.principalMenu{
-  /* border: 2px solid purple; */
-  /* position: absolute; */
-  background-color: rgba(37, 37, 65, 0.795);
+.principalMenu {
+  
+  background-color: rgb(86, 52, 88);
   height: 8%;
-  
-  
 }
 
-.lupa{
+.lupa {
+
   display: flex;
   position: fixed;
   width: 5%;
-  height:4%;
+  height: 4%;
   left: 43%;
-  top:1.5%;
+  top: 1.5%;
 }
 
-.imgLupa{
+.imgLupa {
+
   width: 100%;
   height: 100%;
-     
 }
 
-.titleSecond{
-  /*border: 2px solid rgb(58, 3, 21);*/
-  margin: 2%;
-  display: flex;
-  position: fixed;
-}
-
-#titlesecondPage{
-  max-width: 40%;
- 
-}
-
-
-.containerHomePage{
+.titleSecond {
   
+  margin-top: 5px;
+  margin-left: 10px;
+  display: flex;
+  position: absolute;
+}
+
+#titlesecondPage {
+  
+  max-width: 40%;
+}
+
+.containerHomePage {
+
   display: flex;
   position: fixed;
   max-width: max-content;
   min-width: min-content;
   left: 85%;
   top: 1.5%;
-  
 }
 
-#buttonhome{
+#buttonhome {
+
   border-radius: 5px;
-  background: #F2E03B;
- /*  border: 1px solid #3C73FE; */
-  font-family: 'Handlee', cursive;
-  
+  background: rgb(250, 225, 247);
+  font-family: "Handlee", cursive;
 }
 
-#search{
+#search {
+
   position: relative;
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   border-radius: 7px;
-  background: #F2E03B;
-  /* border: 1px solid #3C73FE; */
+  background: rgb(250, 225, 247);
   box-sizing: border-box;
   max-width: 88%;
-  
 }
 
-.searchPokemon{
-  /*border: 2px solid green;*/
+.searchPokemon {
+
   position: fixed;
   left: 50%;
   top: 1.5%;
-  
 }
 
-.sectionFooter{
-  /*border: 2px solid black;*/
+.sectionFooter {
+  
   position: fixed;
   bottom: 0%;
   z-index: 10;
- /*  top:91% */;   
-  
 }
 
-.gifpokeball{
-  /*border: 2px solid purple;*/
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  top: 80%;
-     
-} 
-
-.pokeball{
-  /*border: 2px solid greenyellow;*/
+.pokeball {
+  
   width: 50%;
   height: 100%;
-
 }
 
 #root {
+
   background-color: transparent;
   width: 100%;
   height: 90%;
-  
-  /* margin-top: %; */
- /*  perspective: 1000px; */ /* Remove this if you don't want the 3D effect */
-  /* border: 2px dotted rgb(25, 0, 255); */
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
   justify-content: center;
-  overflow:scroll;
+  overflow-y: scroll;
   bottom: 10%;
-  
-  
+  row-gap: 20px;
 }
 
 /* This container is needed to position the front and back side */
 .madre {
- /*  position: relative; */
+  
   width: 30%;
   height: 30%;
-  min-width: 200px;
-  min-height: 250px;
+  min-width: 230px;
+  min-height: 270px;
   max-width: 250px;
   max-height: 300px;
   text-align: center;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
-  margin: 4% 2% 0% 2% ;
+  margin: 45px 10px 0px 10px;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -341,9 +275,11 @@ align-items: center;
 }
 
 /* Position the front and back side */
-.containerDataCard, .containerDataCardReverse {
+.containerDataCard,
+.containerDataCardReverse {
+
   position: absolute;
-  border-radius: 20px ;
+  border-radius: 20px;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
@@ -352,9 +288,10 @@ align-items: center;
 
 /* Style the front side */
 .containerDataCard {
+
   background-image: url(./data/Img/fondot5.jpg);
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: black;
@@ -362,63 +299,121 @@ align-items: center;
 
 /* Style the back side */
 .containerDataCardReverse {
+
   background-image: url(./data/Img/fondot3.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
   transform: rotateY(180deg);
- 
 }
 
-.pokemonImg{
+.pokemonImg {
+
   position: absolute;
   bottom: 75%;
-  width: 40%;
-  height: 40%;
+  
 }
-.namePokemon{
+.namePokemon {
+
   text-transform: capitalize;
   font-size: 25px;
-  font-family:'Handlee', cursive ;
+  font-family: "Handlee", cursive;
   position: absolute;
   top: 13%;
-  /* border: 2px solid yellow; */
+  
 }
-.numPokemon{
+.numPokemon {
+
   position: absolute;
   top: 27%;
   font-size: 15px;
-  font-family:'Handlee', cursive ;
-  /* border: 2px solid yellow; */
+  font-family: "Handlee", cursive;
+  
 }
-.typePokemonName{
+.typePokemonName {
+
   text-transform: capitalize;
-  font-family:'Handlee', cursive ;
+  font-family: "Handlee", cursive;
   font-size: 20px;
   position: absolute;
   top: 60%;
-  /* border: 2px solid yellow; */
+  
 }
-.typePokeImg{
+.typePokeImg {
+
   width: 100%;
   height: 18%;
   margin-top: 0;
   margin-bottom: 0;
 }
-.containerTypeImg{
+.containerTypeImg {
+
   position: absolute;
   top: 80%;
-  /* border: 2px solid yellow; */
+  
 }
-.sizeTittle{
-  font-family:'Handlee', cursive ;
+.sizeTittle {
+
+  font-family: "Handlee", cursive;
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 0;
-  /* border: 2px solid yellow; */
 }
-.tableSize{
-  font-family:'Handlee', cursive ;
-  /* border: 2px solid yellow; */
-  position: absolute;
-  top:45%;
 
+.tableSize {
+
+  font-family: "Handlee", cursive;
+  position: absolute;
+  top: 45%;
+}
+
+/*estilos reverso de la tarjeta*/
+
+.tittleResist {
+
+  top: 15%;
+  position: absolute;
+  font-family: "Handlee", cursive;
+  font-size: 20px;
+  color: rgb(8, 2, 34);
+}
+
+.containerResistantImg {
+
+  position: absolute;
+  top: 35%;
+  padding: 1%;
+}
+
+.tittleWeak {
+
+  font-family: "Handlee", cursive;
+  font-size: 20px;
+  color: rgb(8, 2, 34);
+  position: absolute;
+  top: 43%;
+}
+
+.containerWeakImg {
+
+  position: absolute;
+  top: 61%;
+}
+
+.pokemonImgReverse {
+
+  transform: scaleX(-1);
+  position: absolute;
+  bottom: 75%;
+  
+}
+
+.tablePokemonStats {
+  
+  font-family: "Handlee", cursive;
+  color: rgb(8, 2, 34);
+  position: absolute;
+  top: 78%;
 }
