@@ -1,4 +1,5 @@
 import { filterPokemon } from "./data.js";
+import {filterGenerationPokemon} from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Declaración variable global
@@ -87,6 +88,41 @@ const paintData = (data) => {
 // invocar la función 
 paintData(dataPokemon);
 
+let filtersDiv = document.getElementById("filters");
+
+let selectOptionsTypePokemon = `
+<div>
+<select id="selectTypePokemon">
+  <option value="" selected>All</option>
+  <option value="bug">Bug</option>
+  <option value="dark">Dark</option>
+  <option value="dragon">Dragon</option>
+  <option value="electric">Electric</option>
+  <option value="fairy">Fairy</option>
+  <option value="fighting">Fighting</option>
+  <option value="fire">Fire</option>
+  <option value="flying">Flying</option>
+  <option value="ghost">Ghost</option>
+  <option value="grass">Grass</option>
+  <option value="ground">Ground</option>
+  <option value="ice">Ice</option>
+  <option value="normal">Normal</option>
+  <option value="poison">Poison</option>
+  <option value="psychic">Psychic</option>
+  <option value="rock">Rock</option>
+  <option value="steel">Steel</option>
+  <option value="water">Water</option>
+</select>
+</div>
+`
+filtersDiv.innerHTML = selectOptionsTypePokemon; 
+
+
+
+
+
+
+
 // Click a botón que lleva a página 2
 document.getElementById("buttonOne").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "none";
@@ -98,3 +134,8 @@ document.getElementById("buttonhome").addEventListener("click", () => {
   document.getElementById("secondPage2").style.display = "none";
   document.getElementById("firtsPage1").style.display = "block";
 });
+
+/* Intento funcion filter */
+
+/* console.log("Esto es filter Poke",  filterPokemon(dataPokemon, "water"));
+console.log("Esto es generation Poke", filterGenerationPokemon(dataPokemon, "kanto")); */

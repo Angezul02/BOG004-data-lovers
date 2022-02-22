@@ -1,12 +1,13 @@
 // estas funciones son de ejemplo
 
-export const filterPokemon = () => {
-  
-  console.log("esto es: ", dataPokemon);
-  return 'example';
+export const filterPokemon = (data, type) => {
+let filterTypePoke = data.filter(tipoPoke => tipoPoke.type.includes(type) // only arrays //
+)
+ return filterTypePoke; /* Esto me retorna una data con la información filtrada */
 };
 
-export const anotherExample = () => {
-  return 'OMG';
+export const filterGenerationPokemon = (data, generation) => {
+  let filterGenerationPoke = data.filter(generationPoke => generationPoke.generation.name==generation /* Lo igualamos para evaluar que generación exista y cumpla con el argumento dado */
+  )
+  return filterGenerationPoke;
 };
-
