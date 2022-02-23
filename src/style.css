@@ -21,7 +21,7 @@ body {
 
 .imgBackground {
 
-  background-image: url("./data/Img/eevee.jpg");
+  background-image: url("./data/Img/fondohomecel.jpg");
   background-position: center center;
   background-size: 100% 100%, 100% 100%;
   width: 100%;
@@ -117,7 +117,7 @@ body {
   
   width: 100%;
   height: 10vh;
-  background-color: rgb(86, 52, 88);
+  background-color: rgb(2, 3, 58);
 }
 
 #authors {
@@ -140,6 +140,7 @@ body {
   height: 5%;
   top: 93%;
   left: 5%;
+  gap: 5px;
 }
 
 #firtsPage1 {
@@ -160,25 +161,11 @@ body {
 
 .principalMenu {
   
-  background-color: rgb(86, 52, 88);
-  height: 8%;
+  background-image: url(./data/Img/vectormenu2.jpg);
+  height: 9%;
 }
 
-.lupa {
 
-  display: flex;
-  position: fixed;
-  width: 5%;
-  height: 4%;
-  left: 43%;
-  top: 1.5%;
-}
-
-.imgLupa {
-
-  width: 100%;
-  height: 100%;
-}
 
 .titleSecond {
   
@@ -411,9 +398,87 @@ body {
 }
 
 .tablePokemonStats {
-  
+
   font-family: "Handlee", cursive;
   color: rgb(8, 2, 34);
   position: absolute;
   top: 78%;
 }
+
+/* .typePokeSelect{
+
+  position: absolute;
+  border: 2px solid salmon;
+  top: 10px;
+} */
+
+.filterGeneral{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 1px;
+  right: 50px;
+  gap: 3px;
+  
+  
+}
+
+#selectTypePokemon, 
+#selectGenerationPokemon{
+  border-radius: 5px;
+  background: rgb(250, 225, 247);
+  font-family: "Handlee", cursive;
+  
+}
+  
+
+ /* media query para pantallas grandes  */
+
+ @media (min-width: 600px){
+  
+  
+  .imgBackground{
+    background-image: url(./data/Img/Group\ 9.png);
+    height: 100%;
+    width: 50%;
+    
+  }
+    
+  #titleFirstPage{
+    display: flex;
+    position: relative;
+    height: 70px;
+    width: 300px;
+    left: 21%;
+    bottom: 30%;
+    
+    
+  }
+  
+  .navigationMenu{
+    position: absolute;
+    justify-items: center;
+    border-radius: 10px;
+    background-color: rgba(204, 178, 178, 0.301);
+    /* border: 2px solid red; */
+    top: 15%;
+    left: 45%;
+    height: 57%;
+    width: 25%;
+    padding: 15px;
+    
+
+  }
+  
+  #buttonOne, #buttonTwo, #buttonThree, #buttonFour{
+    background-color: rgb(2, 3, 58);
+    font-size: 15px;
+    font-weight: 50;
+    color:rgb(154, 213, 236) ;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    
+  }
+
+ }

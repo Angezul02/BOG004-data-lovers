@@ -1,4 +1,5 @@
 import { filterPokemon } from "./data.js";
+import {filterGenerationPokemon} from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Declaración variable global
@@ -87,6 +88,79 @@ const paintData = (data) => {
 // invocar la función 
 paintData(dataPokemon);
 
+let filtersDiv = document.getElementById("filterGeneral");
+let divSelectType = document.getElementById("filtersType");
+// se crea el select para las opciones de filtrado tipo de pokemon//
+let selectOptionsTypePokemon = `
+<div class = typePokeSelect>
+  <select id="selectTypePokemon">
+    <option value="" selected>All</option>
+    <option value="bug">Bug</option>
+    <option value="dark">Dark</option>
+    <option value="dragon">Dragon</option>
+    <option value="electric">Electric</option>
+    <option value="fairy">Fairy</option>
+    <option value="fighting">Fighting</option>
+    <option value="fire">Fire</option>
+    <option value="flying">Flying</option>
+    <option value="ghost">Ghost</option>
+    <option value="grass">Grass</option>
+    <option value="ground">Ground</option>
+    <option value="ice">Ice</option>
+    <option value="normal">Normal</option>
+    <option value="poison">Poison</option>
+    <option value="psychic">Psychic</option>
+    <option value="rock">Rock</option>
+    <option value="steel">Steel</option>
+    <option value="water">Water</option>
+  </select>
+</div>
+`
+divSelectType.innerHTML = selectOptionsTypePokemon; 
+
+
+//se crea un evento para seleccionar el pokemon que queremos filtrar por tipo //
+
+document.getElementById("selectTypePokemon").addEventListener("change",() => {
+// se crea la variable para guardar la selección del usuario (filtro tipo)//
+  let selectOptions= document.getElementById("selectTypePokemon").value;
+// se crea la condicional de: si no se selecciona ninguna opción va a mostrar todos los pokemones//
+  if(!selectOptions){
+    paintData(dataPokemon);
+  }  else{
+    paintData(filterPokemon(dataPokemon, selectOptions));
+  }
+});
+
+// se crea el select para las opciones de filtro generación pokémon//
+let divSelectGeneration = document.getElementById("filtersGeneration")
+let selectOptionsGenerationPoke= `
+<div>
+  <select id="selectGenerationPokemon">
+    <option value="" selected>All</option>
+    <option value="kanto">Kanto</option>
+    <option value="johto">Johto</option>
+  </select>
+</div>
+`
+divSelectGeneration.innerHTML= selectOptionsGenerationPoke;
+
+
+
+
+//se crea un evento para seleccionar el pokemon que queremos filtrar por generación  //
+
+document.getElementById("selectGenerationPokemon").addEventListener("change",()=>{
+  let selectOptionGeneration = document.getElementById("selectGenerationPokemon").value;
+  if(!selectOptionGeneration){
+    paintData(dataPokemon)
+  } else{
+    paintData(filterGenerationPokemon(dataPokemon, selectOptionGeneration));
+  }
+});
+
+
+
 // Click a botón que lleva a página 2
 document.getElementById("buttonOne").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "none";
@@ -98,3 +172,4 @@ document.getElementById("buttonhome").addEventListener("click", () => {
   document.getElementById("secondPage2").style.display = "none";
   document.getElementById("firtsPage1").style.display = "block";
 });
+
