@@ -170,7 +170,7 @@ body {
 .titleSecond {
   
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 3px;
   display: flex;
   position: absolute;
 }
@@ -186,7 +186,7 @@ body {
   position: fixed;
   max-width: max-content;
   min-width: min-content;
-  left: 85%;
+  left: 86%;
   top: 1.5%;
 }
 
@@ -419,17 +419,24 @@ body {
   position: absolute;
   top: 1px;
   right: 50px;
-  gap: 3px;
+  gap: 1px;
   
   
 }
 
 #selectTypePokemon, 
 #selectGenerationPokemon{
+  width: 50px;
   border-radius: 5px;
   background: rgb(250, 225, 247);
   font-family: "Handlee", cursive;
   
+}
+
+#selectAzPokemon{
+  border-radius: 5px;
+  background: rgb(250, 225, 247);
+  font-family: "Handlee", cursive;
 }
   
 

@@ -1,18 +1,117 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterPokemon } from '../src/data.js';
+let muestraInfoPoke= [
+  {"num": "001",
+  "name": "bulbasaur",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+   },
+  "type": [
+    "grass",
+    "poison"
+  ],
+},
+  { "num": "002",
+  "name": "ivysaur",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+  },
+  "type": [
+    "grass",
+    "poison"
+  ],
 
+  },
 
-describe('example', () => {
+{
+  "num": "003",
+    "name": "venusaur",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+  "type": [
+    "grass",
+    "poison"
+    ],
+},
+{
+  "num": "003",
+    "name": "venusaur",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+  "type": [
+    "grass",
+    "poison"
+    ],
+}
+]
+let resultado=[
+  {"num": "001",
+  "name": "bulbasaur",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+   },
+  "type": [
+    "grass",
+    "poison"
+  ],
+},
+  { "num": "002",
+  "name": "ivysaur",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+  },
+  "type": [
+    "grass",
+    "poison"
+  ],
+
+  },
+
+{
+  "num": "003",
+    "name": "venusaur",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+  "type": [
+    "grass",
+    "poison"
+    ],
+},
+{
+  "num": "003",
+    "name": "venusaur",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+  "type": [
+    "grass",
+    "poison"
+    ],
+}
+]
+
+describe('filterPokemon', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterPokemon).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `filterPokemon`', () => {
+    expect(filterPokemon(muestraInfoPoke, "grass")).toBe(resultado);
   });
 });
 
 
-describe('anotherExample', () => {
+/* describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -21,3 +120,4 @@ describe('anotherExample', () => {
     expect(anotherExample()).toBe('OMG');
   });
 });
+ */

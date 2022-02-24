@@ -82,7 +82,7 @@ const paintData = (data) => {
     </div>
     `;
     pokemonsInformation += boxPokemon;
-    console.log("Esto es caja de pokemones" ,boxPokemon);
+    
   });
   rootDiv.innerHTML = pokemonsInformation;
 };
@@ -95,7 +95,7 @@ let divSelectType = document.getElementById("filtersType");
 let selectOptionsTypePokemon = `
 <div class = typePokeSelect>
   <select id="selectTypePokemon">
-    <option value="" selected>All</option>
+    <option value="" selected>Type</option>
     <option value="bug">Bug</option>
     <option value="dark">Dark</option>
     <option value="dragon">Dragon</option>
@@ -122,7 +122,7 @@ divSelectType.innerHTML = selectOptionsTypePokemon;
 let divSortPokemon= document.getElementById("sortName");
 let buttonSortPoke=`
 <select id="selectAzPokemon">
-  <option value="allPokemones" >All</option>
+  <option value="allPokemones" >Order</option>
   <option value="sortButton" id="buttonSort">A-Z</option>
   <option value="sortButtonReverse">Z-A</option>
   </select>
@@ -159,7 +159,7 @@ let divSelectGeneration = document.getElementById("filtersGeneration")
 let selectOptionsGenerationPoke= `
 <div>
   <select id="selectGenerationPokemon">
-    <option value="" selected>All</option>
+    <option value="" selected>Gen</option>
     <option value="kanto">Kanto</option>
     <option value="johto">Johto</option>
   </select>
