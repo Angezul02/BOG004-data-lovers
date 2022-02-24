@@ -11,3 +11,18 @@ export const filterGenerationPokemon = (data, generation) => {
   )
   return filterGenerationPoke;
 };
+
+export const dataPokemonSort = (data, sortName, sortOrder)=>{
+  let sortNamePokemon = data.sort(function compare(a, b){
+
+    if (a[sortName] < b[sortName]) {
+      return -1;
+    }
+    if (a [sortName] > b [sortName]) {
+      return 1;
+    }
+    
+    return 0;
+  })
+    return sortNamePokemon;
+};

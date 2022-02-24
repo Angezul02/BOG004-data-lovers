@@ -1,6 +1,7 @@
 import { filterPokemon } from "./data.js";
 import {filterGenerationPokemon} from "./data.js";
 import data from "./data/pokemon/pokemon.js";
+import {dataPokemonSort} from "./data.js";
 
 //Declaración variable global
 const dataPokemon = data.pokemon;
@@ -88,7 +89,7 @@ const paintData = (data) => {
 // invocar la función 
 paintData(dataPokemon);
 
-let filtersDiv = document.getElementById("filterGeneral");
+
 let divSelectType = document.getElementById("filtersType");
 // se crea el select para las opciones de filtrado tipo de pokemon//
 let selectOptionsTypePokemon = `
@@ -118,7 +119,28 @@ let selectOptionsTypePokemon = `
 `
 divSelectType.innerHTML = selectOptionsTypePokemon; 
 
+let divSortPokemon= document.getElementById("sortName");
+let buttonSortPoke=`
+<select id="selectAzPokemon">
+  <option value="allPokemones" >All</option>
+  <option value="sortButton" id="buttonSort">A-Z</option>
+  <option value="sortButtonReverse">Z-A</option>
+  </select>
+`;
 
+divSortPokemon.innerHTML=buttonSortPoke;
+
+document.getElementById("selectAzPokemon").addEventListener("change",()=>{
+  let selectOptionSort=document.getElementById("selectAzPokemon").value;
+    if(selectOptionSort=="allPokemones"){
+    paintData(dataPokemonSort(dataPokemon, "num"));
+  }else if(selectOptionSort=="sortButton"){
+    paintData(dataPokemonSort(dataPokemon, "name"));
+  }else{
+    paintData(dataPokemonSort(dataPokemon, "name").reverse());
+  }
+    
+  });
 //se crea un evento para seleccionar el pokemon que queremos filtrar por tipo //
 
 document.getElementById("selectTypePokemon").addEventListener("change",() => {
