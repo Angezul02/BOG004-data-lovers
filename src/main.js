@@ -4,7 +4,7 @@ import data from "./data/pokemon/pokemon.js";
 import {dataPokemonSort} from "./data.js";
 
 //Declaración variable global
-const dataPokemon = data.pokemon;
+export const dataPokemon = data.pokemon;
 
 //Contenedor principal en el HTML
 let rootDiv = document.getElementById("root");
