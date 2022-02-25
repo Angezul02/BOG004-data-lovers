@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
 export const filterPokemon = (data, type) => {
-let filterTypePoke = data.filter(tipoPoke => tipoPoke.type.includes(type) // only arrays //
+let filterTypePoke = data.filter(typoPoke => typoPoke.type.includes(type) // only arrays //
 )
  return filterTypePoke; /* Esto me retorna una data con la información filtrada */
 };
