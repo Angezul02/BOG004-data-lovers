@@ -3,13 +3,14 @@ import {filterGenerationPokemon} from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 import {dataPokemonSort} from "./data.js";
 
+
 //Declaración variable global
 const dataPokemon = data.pokemon;
 
 //Contenedor principal en el HTML
 let rootDiv = document.getElementById("root");
 
-const paintData = (data) => {
+export const paintData = (data) => {
   let pokemonsInformation = "";
   data.forEach((elemento) => {
 
@@ -195,3 +196,24 @@ document.getElementById("buttonhome").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "block";
 });
 
+// funcionalidad boton pokemon go y iconos redes sociales 
+
+document.getElementById("buttonFour").addEventListener("click", ()=>{
+  window.location.href="https://pokemongolive.com/"
+})
+
+document.getElementById("instagramIcon").addEventListener("click",()=>{
+  window.location.href="https://www.instagram.com/pokemongoapp/?hl=es"
+})
+
+document.getElementById("facebookIcon").addEventListener("click",()=>{
+  window.location.href="https://es-la.facebook.com/PokemonGO/"
+})
+
+document.getElementById("youtubeIcon").addEventListener("click",()=>{
+  window.location.href="https://www.youtube.com/channel/UCA698bls2pjQyiqP9N-iaeg"
+})
+
+document.getElementById("twitterIcon").addEventListener("click",()=>{
+  window.location.href="https://twitter.com/pokemongoapp"
+})
