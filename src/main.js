@@ -1,8 +1,8 @@
 import { filterPokemon } from "./data.js";
-import {filterGenerationPokemon} from "./data.js";
+import { filterGenerationPokemon } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
-import {dataPokemonSort} from "./data.js";
-
+import { dataPokemonSort } from "./data.js";
+import { spawnOrder } from "./data.js";
 
 //Declaración variable global
 export const dataPokemon = data.pokemon;
@@ -13,20 +13,25 @@ let rootDiv = document.getElementById("root");
 export const paintData = (data) => {
   let pokemonsInformation = "";
   data.forEach((elemento) => {
-
     /*  Declaramos la variable  typeImg para guardar los iconos del tipo de Pokemon despues de recorrer el array con forEach y lo utilizamos para mostrarlo en la etiqueta img*/
-    let typeImg = elemento.type.map((type)=>{
-      return `<img class = "imgTypePoke" src ="./data/Img/icons/${type}.webp"/>`
-    }).join("")
+    let typeImg = elemento.type
+      .map((type) => {
+        return `<img class = "imgTypePoke" src ="./data/Img/icons/${type}.webp"/>`;
+      })
+      .join("");
 
     /* Declaramos la variable  resistantPokemon para guardar los iconos de resistencia de Pokemon despues de recorrer el array con forEach y lo utilizamos para mostrarlo en la etiqueta img */
-    let resistantPokemon = elemento.resistant.map((resist) =>{
-     return `<img class="imgresisPoke" src="./data/Img/icons/${resist}.webp"/>`
-    }).join("")
+    let resistantPokemon = elemento.resistant
+      .map((resist) => {
+        return `<img class="imgresisPoke" src="./data/Img/icons/${resist}.webp"/>`;
+      })
+      .join("");
 
-    let weaknessesPokemon = elemento.weaknesses.map((weak) => {
-      return `<img class="imgweakPoke" src="./data/Img/icons/${weak}.webp"/>`
-    }).join("")
+    let weaknessesPokemon = elemento.weaknesses
+      .map((weak) => {
+        return `<img class="imgweakPoke" src="./data/Img/icons/${weak}.webp"/>`;
+      })
+      .join("");
 
     /* El div madre contiene toda la tarjeta - El div  containerDataCard contiene la información de la parte de adelante de la tarjeta VS containerDataCardReverse que contiene la parte de atras*/
     let boxPokemon = `
@@ -72,24 +77,28 @@ export const paintData = (data) => {
       <th>HP</th>
       </tr>
       <tr>
-      <td>${elemento.stats['base-attack']}</td>
-      <td>${elemento.stats['base-defense']}</td>
-      <td>${elemento.stats['base-stamina']}</td>
-      <td>${elemento.stats['max-cp']}</td>
-      <td>${elemento.stats['max-hp']}</td>
+      <td>${elemento.stats["base-attack"]}</td>
+      <td>${elemento.stats["base-defense"]}</td>
+      <td>${elemento.stats["base-stamina"]}</td>
+      <td>${elemento.stats["max-cp"]}</td>
+      <td>${elemento.stats["max-hp"]}</td>
       </tr>
       </table>
       </div>
     </div>
     `;
     pokemonsInformation += boxPokemon;
-    
   });
-  rootDiv.innerHTML = pokemonsInformation;
-};
-// invocar la función 
-paintData(dataPokemon);
 
+  return pokemonsInformation;
+};
+
+let showCards = (section, data) => {
+  section.innerHTML = paintData(data);
+};
+showCards(rootDiv, dataPokemon);
+// invocar la función
+/* paintData(dataPokemon); */
 
 let divSelectType = document.getElementById("filtersType");
 // se crea el select para las opciones de filtrado tipo de pokemon//
@@ -117,11 +126,11 @@ let selectOptionsTypePokemon = `
     <option value="water">Water</option>
   </select>
 </div>
-`
-divSelectType.innerHTML = selectOptionsTypePokemon; 
+`;
+divSelectType.innerHTML = selectOptionsTypePokemon;
 
-let divSortPokemon= document.getElementById("sortName");
-let buttonSortPoke=`
+let divSortPokemon = document.getElementById("sortName");
+let buttonSortPoke = `
 <select id="selectAzPokemon">
   <option value="allPokemones" >Order</option>
   <option value="sortButton" id="buttonSort">A-Z</option>
@@ -129,35 +138,34 @@ let buttonSortPoke=`
   </select>
 `;
 
-divSortPokemon.innerHTML=buttonSortPoke;
+divSortPokemon.innerHTML = buttonSortPoke;
 
-document.getElementById("selectAzPokemon").addEventListener("change",()=>{
-  let selectOptionSort=document.getElementById("selectAzPokemon").value;
-    if(selectOptionSort=="allPokemones"){
-    paintData(dataPokemonSort(dataPokemon, "num"));
-  }else if(selectOptionSort=="sortButton"){
-    paintData(dataPokemonSort(dataPokemon, "name"));
-  }else{
-    paintData(dataPokemonSort(dataPokemon, "name").reverse());
+document.getElementById("selectAzPokemon").addEventListener("change", () => {
+  let selectOptionSort = document.getElementById("selectAzPokemon").value;
+  if (selectOptionSort == "allPokemones") {
+    showCards(rootDiv, dataPokemonSort(dataPokemon, "num"));
+  } else if (selectOptionSort == "sortButton") {
+    showCards(rootDiv, dataPokemonSort(dataPokemon, "name"));
+  } else {
+    showCards(rootDiv, dataPokemonSort(dataPokemon, "name").reverse());
   }
-    
-  });
+});
 //se crea un evento para seleccionar el pokemon que queremos filtrar por tipo //
 
-document.getElementById("selectTypePokemon").addEventListener("change",() => {
-// se crea la variable para guardar la selección del usuario (filtro tipo)//
-  let selectOptions= document.getElementById("selectTypePokemon").value;
-// se crea la condicional de: si no se selecciona ninguna opción va a mostrar todos los pokemones//
-  if(!selectOptions){
-    paintData(dataPokemon);
-  }  else{
-    paintData(filterPokemon(dataPokemon, selectOptions));
+document.getElementById("selectTypePokemon").addEventListener("change", () => {
+  // se crea la variable para guardar la selección del usuario (filtro tipo)//
+  let selectOptions = document.getElementById("selectTypePokemon").value;
+  // se crea la condicional de: si no se selecciona ninguna opción va a mostrar todos los pokemones//
+  if (!selectOptions) {
+    showCards(rootDiv, dataPokemon);
+  } else {
+    showCards(rootDiv, filterPokemon(dataPokemon, selectOptions));
   }
 });
 
 // se crea el select para las opciones de filtro generación pokémon//
-let divSelectGeneration = document.getElementById("filtersGeneration")
-let selectOptionsGenerationPoke= `
+let divSelectGeneration = document.getElementById("filtersGeneration");
+let selectOptionsGenerationPoke = `
 <div>
   <select id="selectGenerationPokemon">
     <option value="" selected>Gen</option>
@@ -165,24 +173,26 @@ let selectOptionsGenerationPoke= `
     <option value="johto">Johto</option>
   </select>
 </div>
-`
-divSelectGeneration.innerHTML= selectOptionsGenerationPoke;
-
-
-
+`;
+divSelectGeneration.innerHTML = selectOptionsGenerationPoke;
 
 //se crea un evento para seleccionar el pokemon que queremos filtrar por generación  //
 
-document.getElementById("selectGenerationPokemon").addEventListener("change",()=>{
-  let selectOptionGeneration = document.getElementById("selectGenerationPokemon").value;
-  if(!selectOptionGeneration){
-    paintData(dataPokemon)
-  } else{
-    paintData(filterGenerationPokemon(dataPokemon, selectOptionGeneration));
-  }
-});
-
-
+document
+  .getElementById("selectGenerationPokemon")
+  .addEventListener("change", () => {
+    let selectOptionGeneration = document.getElementById(
+      "selectGenerationPokemon"
+    ).value;
+    if (!selectOptionGeneration) {
+      showCards(rootDiv, dataPokemon);
+    } else {
+      showCards(
+        rootDiv,
+        filterGenerationPokemon(dataPokemon, selectOptionGeneration)
+      );
+    }
+  });
 
 // Click a botón que lleva a página 2
 document.getElementById("buttonOne").addEventListener("click", () => {
@@ -196,24 +206,47 @@ document.getElementById("buttonhome").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "block";
 });
 
-// funcionalidad boton pokemon go y iconos redes sociales 
+// funcionalidad boton pokemon go y iconos redes sociales
 
-document.getElementById("buttonFour").addEventListener("click", ()=>{
-  window.location.href="https://pokemongolive.com/"
-})
+document.getElementById("buttonFour").addEventListener("click", () => {
+  window.location.href = "https://pokemongolive.com/";
+});
 
-document.getElementById("instagramIcon").addEventListener("click",()=>{
-  window.location.href="https://www.instagram.com/pokemongoapp/?hl=es"
-})
+document.getElementById("instagramIcon").addEventListener("click", () => {
+  window.location.href = "https://www.instagram.com/pokemongoapp/?hl=es";
+});
 
-document.getElementById("facebookIcon").addEventListener("click",()=>{
-  window.location.href="https://es-la.facebook.com/PokemonGO/"
-})
+document.getElementById("facebookIcon").addEventListener("click", () => {
+  window.location.href = "https://es-la.facebook.com/PokemonGO/";
+});
 
-document.getElementById("youtubeIcon").addEventListener("click",()=>{
-  window.location.href="https://www.youtube.com/channel/UCA698bls2pjQyiqP9N-iaeg"
-})
+document.getElementById("youtubeIcon").addEventListener("click", () => {
+  window.location.href =
+    "https://www.youtube.com/channel/UCA698bls2pjQyiqP9N-iaeg";
+});
 
-document.getElementById("twitterIcon").addEventListener("click",()=>{
-  window.location.href="https://twitter.com/pokemongoapp"
-})
+document.getElementById("twitterIcon").addEventListener("click", () => {
+  window.location.href = "https://twitter.com/pokemongoapp";
+});
+
+// funcionalidad boton Top 10 de aparición
+
+document.getElementById("buttonTwo").addEventListener("click", () => {
+  document.getElementById("firtsPage1").style.display = "none";
+  document.getElementById("thirdPage3").style.display = "block";
+});
+
+document.getElementById("buttonhomepage3").addEventListener("click", () => {
+  document.getElementById("thirdPage3").style.display = "none";
+  document.getElementById("firtsPage1").style.display = "block";
+});
+
+let spawnThirdPage3 = document.getElementById("sectionThree");
+
+document.getElementById("buttonTwo").addEventListener("click", () => {
+  let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
+  spawnArray.length = 10;
+  showCards(spawnThirdPage3, spawnArray);
+
+  console.log("esto es encuentro pokemon:", spawnArray);
+});

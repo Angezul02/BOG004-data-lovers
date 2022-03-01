@@ -121,4 +121,4 @@ describe('dataPokemonSort',()=>{
     const result = dataPokemonSort(muestraInfoPoke, "name");
     expect(result[6].name).toEqual('jolteon');
   });
-npm});
+});
