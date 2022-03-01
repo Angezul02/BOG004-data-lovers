@@ -243,10 +243,56 @@ document.getElementById("buttonhomepage3").addEventListener("click", () => {
 
 let spawnThirdPage3 = document.getElementById("sectionThree");
 
-document.getElementById("buttonTwo").addEventListener("click", () => {
-  let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
+let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
+/* document.getElementById("buttonTwo").addEventListener("click", () => {
   spawnArray.length = 10;
   showCards(spawnThirdPage3, spawnArray);
 
   console.log("esto es encuentro pokemon:", spawnArray);
 });
+ */
+let arrayNameSpawn= spawnArray.map(e => e.name
+)
+arrayNameSpawn.length=10
+console.log("estos son los nombres:", arrayNameSpawn)
+
+let arraySpawnChanceTop = spawnArray.map(e=> e['spawn-chance']
+  )
+arraySpawnChanceTop.length=10
+console.log("estos son los valores: ", arraySpawnChanceTop);
+
+let ctx= document.getElementById("myChartSpawn").getContext("2d");
+        let myChartSpawn= new Chart(ctx, {
+          type:'doughnut',
+          data:{
+            datasets:[{
+              label:"Spawn Chance Top 10",
+              data:arraySpawnChanceTop,
+              backgroundColor:[
+                'rgb(233, 153, 53 )',
+                'rgb(202, 241, 101)',
+                'rgb(116, 241, 101)',
+                'rgb(88, 187, 127)',
+                'rgb(74, 133, 136)',
+                'rgb(28, 51, 122 )',
+                'rgb(112, 57, 199 )',
+                'rgb(193, 57, 199 )',
+                'rgb(199, 57, 138 )',
+                'rgb(236, 47, 94 )',
+                
+              ]
+              
+            }],
+            
+            labels:arrayNameSpawn
+          },
+          options:{
+              scales:{
+                y: {
+                  beginAtZero: true
+              }
+              }
+          }
+        });
+
+/* console.log("esto muestra :", myChartSpawn); */

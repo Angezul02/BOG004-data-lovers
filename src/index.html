@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
   </head>
   <body>
     <main>
@@ -91,20 +92,27 @@
       <div id="root"></div>
     </section>
     <section class="pageThird" id="thirdPage3">
-      <div class="titleSecond">
-        <img
-          src="data\Img\Titulopokelovers.png"
-          alt="Titulopágina2"
-          id="titlesecondPage"
-        />
-      </div>
-      <div class="containerHomePage">
+      <div class="containerHomePage3">
         <button type="button" class="homepage" id="buttonhomepage3">
           Home
         </button>
+        <div class="titleSecond">
+          <img
+            src="data\Img\Titulopokelovers.png"
+            alt="Titulopágina2"
+            id="titlethreePage"
+          />
+        </div>
       </div>
-      <div class="section3" id="sectionThree"></div>
+      <div class="section3" id="sectionThree">
+        
+        <div id="containerStatistics">
+        <canvas id="myChartSpawn"></canvas>
+        </div>
+      </div>
+      
     </section>
     <script src="main.js" type="module"></script>
+    
   </body>
 </html>
