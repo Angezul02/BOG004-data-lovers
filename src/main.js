@@ -178,12 +178,8 @@ divSelectGeneration.innerHTML = selectOptionsGenerationPoke;
 
 //se crea un evento para seleccionar el pokemon que queremos filtrar por generación  //
 
-document
-  .getElementById("selectGenerationPokemon")
-  .addEventListener("change", () => {
-    let selectOptionGeneration = document.getElementById(
-      "selectGenerationPokemon"
-    ).value;
+document.getElementById("selectGenerationPokemon").addEventListener("change", () => {
+    let selectOptionGeneration = document.getElementById("selectGenerationPokemon").value;
     if (!selectOptionGeneration) {
       showCards(rootDiv, dataPokemon);
     } else {
@@ -198,11 +194,14 @@ document
 document.getElementById("buttonOne").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "none";
   document.getElementById("secondPage2").style.display = "block";
+  document.getElementById("principalMenu").style.display = "block";
+
 });
 
 // Click a botón que retorna a home
 document.getElementById("buttonhome").addEventListener("click", () => {
   document.getElementById("secondPage2").style.display = "none";
+  document.getElementById("principalMenu").style.display = "none";
   document.getElementById("firtsPage1").style.display = "block";
 });
 
@@ -234,65 +233,51 @@ document.getElementById("twitterIcon").addEventListener("click", () => {
 document.getElementById("buttonTwo").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "none";
   document.getElementById("thirdPage3").style.display = "block";
+  document.getElementById("principalMenuPage3").style.display = "block";
 });
 
 document.getElementById("buttonhomepage3").addEventListener("click", () => {
   document.getElementById("thirdPage3").style.display = "none";
+  document.getElementById("principalMenuPage3").style.display = "none";
   document.getElementById("firtsPage1").style.display = "block";
 });
 
-let spawnThirdPage3 = document.getElementById("sectionThree");
+let spawnThirdPage3 = document.getElementById("sectionThree"); 
 
-let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
-/* document.getElementById("buttonTwo").addEventListener("click", () => {
+spawnThirdPage3 = document.getElementById("buttonTwo").addEventListener("click", () => {
+  let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
   spawnArray.length = 10;
-  showCards(spawnThirdPage3, spawnArray);
-
-  console.log("esto es encuentro pokemon:", spawnArray);
-});
- */
-let arrayNameSpawn= spawnArray.map(e => e.name
-)
-arrayNameSpawn.length=10
-console.log("estos son los nombres:", arrayNameSpawn)
-
-let arraySpawnChanceTop = spawnArray.map(e=> e['spawn-chance']
-  )
-arraySpawnChanceTop.length=10
-console.log("estos son los valores: ", arraySpawnChanceTop);
-
-let ctx= document.getElementById("myChartSpawn").getContext("2d");
-        let myChartSpawn= new Chart(ctx, {
-          type:'doughnut',
-          data:{
-            datasets:[{
-              label:"Spawn Chance Top 10",
-              data:arraySpawnChanceTop,
-              backgroundColor:[
-                'rgb(233, 153, 53 )',
-                'rgb(202, 241, 101)',
-                'rgb(116, 241, 101)',
-                'rgb(88, 187, 127)',
-                'rgb(74, 133, 136)',
-                'rgb(28, 51, 122 )',
-                'rgb(112, 57, 199 )',
-                'rgb(193, 57, 199 )',
-                'rgb(199, 57, 138 )',
-                'rgb(236, 47, 94 )',
-                
-              ]
-              
-            }],
-            
-            labels:arrayNameSpawn
+  let arrayNameSpawn= spawnArray.map(e => e.name)
+  let arraySpawnChanceTop = spawnArray.map(e=> e['spawn-chance'])
+  
+  let ctx= document.getElementById("myChartSpawn").getContext("2d");
+  let myChartSpawn= new Chart(ctx, {
+    type:'doughnut',
+      data:{
+        datasets:[{
+          label:"Spawn Chance Top 10",
+          data:arraySpawnChanceTop,
+          backgroundColor:[
+                  'rgb(233, 153, 53 )',
+                  'rgb(202, 241, 101)',
+                  'rgb(116, 241, 101)',
+                  'rgb(88, 187, 127)',
+                  'rgb(74, 133, 136)',
+                  'rgb(28, 51, 122 )',
+                  'rgb(112, 57, 199 )',
+                  'rgb(193, 57, 199 )',
+                  'rgb(199, 57, 138 )',
+                  'rgb(236, 47, 94 )',
+          ]
+          }],
+          labels:arrayNameSpawn
           },
           options:{
-              scales:{
-                y: {
-                  beginAtZero: true
+            scales:{
+              y: {
+                beginAtZero: true
               }
-              }
+            }
           }
-        });
-
-/* console.log("esto muestra :", myChartSpawn); */
+  });
+});
