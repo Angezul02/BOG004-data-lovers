@@ -1,18 +1,23 @@
+import data from "./data/pokemon/pokemon.js";
 import { filterPokemon } from "./data.js";
 import { filterGenerationPokemon } from "./data.js";
-import data from "./data/pokemon/pokemon.js";
 import { dataPokemonSort } from "./data.js";
 import { spawnOrder } from "./data.js";
 
 //Declaración variable global
-export const dataPokemon = data.pokemon;
+const dataPokemon = data.pokemon;
 
 //Contenedor principal en el HTML
 let rootDiv = document.getElementById("root");
 
-export const paintData = (data) => {
+/* painData es una función */
+const paintData = (data) => {
+
+  /* La variable pokemonsInformation contiene la información de las 251 tarjetas */
   let pokemonsInformation = "";
+
   data.forEach((elemento) => {
+
     /*  Declaramos la variable  typeImg para guardar los iconos del tipo de Pokemon despues de recorrer el array con forEach y lo utilizamos para mostrarlo en la etiqueta img*/
     let typeImg = elemento.type
       .map((type) => {
@@ -89,16 +94,10 @@ export const paintData = (data) => {
     `;
     pokemonsInformation += boxPokemon;
   });
-
-  return pokemonsInformation;
+    rootDiv.innerHTML = pokemonsInformation
 };
+paintData(dataPokemon)
 
-let showCards = (section, data) => {
-  section.innerHTML = paintData(data);
-};
-showCards(rootDiv, dataPokemon);
-// invocar la función
-/* paintData(dataPokemon); */
 
 let divSelectType = document.getElementById("filtersType");
 // se crea el select para las opciones de filtrado tipo de pokemon//
@@ -140,26 +139,27 @@ let buttonSortPoke = `
 
 divSortPokemon.innerHTML = buttonSortPoke;
 
+/* Funcion ordenar A-Z , Z-A */
 document.getElementById("selectAzPokemon").addEventListener("change", () => {
   let selectOptionSort = document.getElementById("selectAzPokemon").value;
   if (selectOptionSort == "allPokemones") {
-    showCards(rootDiv, dataPokemonSort(dataPokemon, "num"));
+    paintData(dataPokemonSort(dataPokemon, "num"));
   } else if (selectOptionSort == "sortButton") {
-    showCards(rootDiv, dataPokemonSort(dataPokemon, "name"));
+    paintData(dataPokemonSort(dataPokemon, "name"));
   } else {
-    showCards(rootDiv, dataPokemonSort(dataPokemon, "name").reverse());
+    paintData(dataPokemonSort(dataPokemon, "name").reverse());
   }
 });
-//se crea un evento para seleccionar el pokemon que queremos filtrar por tipo //
 
+//se crea un evento para seleccionar el pokemon que queremos filtrar por tipo //
 document.getElementById("selectTypePokemon").addEventListener("change", () => {
   // se crea la variable para guardar la selección del usuario (filtro tipo)//
   let selectOptions = document.getElementById("selectTypePokemon").value;
   // se crea la condicional de: si no se selecciona ninguna opción va a mostrar todos los pokemones//
   if (!selectOptions) {
-    showCards(rootDiv, dataPokemon);
+    paintData(dataPokemon);
   } else {
-    showCards(rootDiv, filterPokemon(dataPokemon, selectOptions));
+    paintData(filterPokemon(dataPokemon, selectOptions));
   }
 });
 
@@ -181,31 +181,39 @@ divSelectGeneration.innerHTML = selectOptionsGenerationPoke;
 document.getElementById("selectGenerationPokemon").addEventListener("change", () => {
     let selectOptionGeneration = document.getElementById("selectGenerationPokemon").value;
     if (!selectOptionGeneration) {
-      showCards(rootDiv, dataPokemon);
+      paintData(dataPokemon);
     } else {
-      showCards(
-        rootDiv,
-        filterGenerationPokemon(dataPokemon, selectOptionGeneration)
+      paintData(filterGenerationPokemon(dataPokemon, selectOptionGeneration)
       );
     }
   });
 
-// Click a botón que lleva a página 2
+// Estas funciones activan y desactivan las vistas de cada página
+
 document.getElementById("buttonOne").addEventListener("click", () => {
   document.getElementById("firtsPage1").style.display = "none";
   document.getElementById("secondPage2").style.display = "block";
-  document.getElementById("principalMenu").style.display = "block";
-
 });
 
-// Click a botón que retorna a home
 document.getElementById("buttonhome").addEventListener("click", () => {
-  document.getElementById("secondPage2").style.display = "none";
-  document.getElementById("principalMenu").style.display = "none";
+  document.getElementById("secondPage2").style.display = "none";;
   document.getElementById("firtsPage1").style.display = "block";
 });
 
-// funcionalidad boton pokemon go y iconos redes sociales
+document.getElementById("buttonTwo").addEventListener("click", () => {
+  document.getElementById("firtsPage1").style.display = "none";
+  document.getElementById("thirdPage3").style.display = "block";
+  document.getElementById("containerStatistics").style.display = "block";
+  document.getElementById("principalMenuPage3").style.display = "block";
+});
+
+document.getElementById("buttonhomepage3").addEventListener("click", () => {
+  document.getElementById("thirdPage3").style.display = "none";
+  document.getElementById("principalMenuPage3").style.display = "none";
+  document.getElementById("firtsPage1").style.display = "block";
+});
+
+// funcionalidad boton pokemon go e iconos redes sociales
 
 document.getElementById("buttonFour").addEventListener("click", () => {
   window.location.href = "https://pokemongolive.com/";
@@ -231,20 +239,6 @@ document.getElementById("twitterIcon").addEventListener("click", () => {
 // funcionalidad boton Top 10 de aparición
 
 document.getElementById("buttonTwo").addEventListener("click", () => {
-  document.getElementById("firtsPage1").style.display = "none";
-  document.getElementById("thirdPage3").style.display = "block";
-  document.getElementById("principalMenuPage3").style.display = "block";
-});
-
-document.getElementById("buttonhomepage3").addEventListener("click", () => {
-  document.getElementById("thirdPage3").style.display = "none";
-  document.getElementById("principalMenuPage3").style.display = "none";
-  document.getElementById("firtsPage1").style.display = "block";
-});
-
-let spawnThirdPage3 = document.getElementById("sectionThree"); 
-
-spawnThirdPage3 = document.getElementById("buttonTwo").addEventListener("click", () => {
   let spawnArray = spawnOrder(dataPokemon, ["spawn-chance"]);
   spawnArray.length = 10;
   let arrayNameSpawn= spawnArray.map(e => e.name)
@@ -279,5 +273,6 @@ spawnThirdPage3 = document.getElementById("buttonTwo").addEventListener("click",
               }
             }
           }
-  });
+        });
+    return myChartSpawn;
 });
