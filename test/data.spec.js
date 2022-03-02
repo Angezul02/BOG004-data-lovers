@@ -1,7 +1,9 @@
 
+import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
 import { filterPokemon } from '../src/data.js';
 import { filterGenerationPokemon} from '../src/data.js';
 import {dataPokemonSort} from '../src/data.js';
+import {spawnOrder} from '../src/data.js';
 
 const muestraInfoPoke=  [
   {
@@ -122,3 +124,4 @@ describe('dataPokemonSort',()=>{
     expect(result[6].name).toEqual('jolteon');
   });
 });
+
