@@ -1,5 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
 
-import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
+/* import { describe, it } from 'eslint/lib/rule-tester/rule-tester'; 
+import { it } from 'eslint/lib/rule-tester/rule-tester'; */
 import { filterPokemon } from '../src/data.js';
 import { filterGenerationPokemon} from '../src/data.js';
 import {dataPokemonSort} from '../src/data.js';
@@ -13,6 +17,7 @@ const muestraInfoPoke=  [
     "num": "generation i",
     "name": "kanto"
   },
+  "spawn-chance": "0.253",
   "type": [
     "fire"
   ],
@@ -24,6 +29,7 @@ const muestraInfoPoke=  [
         "num": "generation i",
         "name": "kanto"
       },
+      "spawn-chance": "0.69", 
       "type": [
         "grass",
         "poison"
@@ -37,6 +43,7 @@ const muestraInfoPoke=  [
       "num": "generation i",
       "name": "kanto"
     },
+    "spawn-chance": "1.15",
     "type": [
       "grass",
       "poison"
@@ -49,6 +56,7 @@ const muestraInfoPoke=  [
       "num": "generation i",
       "name": "kanto"
     },
+    "spawn-chance": "0.012",
     "type": [
       "electric"
     ],
@@ -60,6 +68,7 @@ const muestraInfoPoke=  [
       "num": "generation ii",
       "name": "johto"
     },
+    "spawn-chance": "0",
     "type": [
       "normal",
       "fairy"
@@ -72,6 +81,7 @@ const muestraInfoPoke=  [
       "num": "generation i",
       "name": "kanto"
     },
+    "spawn-chance": "0.42",
     "type": [
       "psychic"
     ],
@@ -83,6 +93,7 @@ const muestraInfoPoke=  [
       "num": "generation i",
       "name": "kanto"
     },
+    "spawn-chance": "0.42",
     "type": [
       "psychic"
     ],
@@ -125,3 +136,16 @@ describe('dataPokemonSort',()=>{
   });
 });
 
+describe('spawnOrder', () => {
+  it ('debería ser una funcion', () =>{
+    expect(typeof spawnOrder).toBe('function');
+  })
+  it('debería mostrar los pokemones con mayor frecuencia de aparición', () =>{
+    const resultSpawnOrder = spawnOrder(muestraInfoPoke,["spawn-chance"]);
+    expect(resultSpawnOrder[0].name).toEqual('bellsprout');
+  });
+  it('debería mostrar los pokemones con mayor frecuencia de aparición', () =>{
+    const resultSpawnOrder = spawnOrder(muestraInfoPoke,["spawn-chance"]);
+    expect(resultSpawnOrder[6].name).toEqual('igglybuff');
+  });
+});
