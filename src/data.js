@@ -1,5 +1,4 @@
-// estas funciones son de ejemplo
-
+/* Filtro por tipo de Pokémon */
 export const filterPokemon = (data, type) => {
   let filterTypePoke = data.filter(
     (typoPoke) => typoPoke.type.includes(type) // only arrays //

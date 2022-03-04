@@ -72,27 +72,31 @@
       </section>
     </footer>
 
-    <section id="principalMenu">
-      <div class="titleSecond">
-        <img
-        src="data\Img\Titulopokelovers.png"
-        alt="Titulopágina2"
-        id="titlesecondPage"
-       />
-      </div>
-      <div class="containerHomePage">
-        <div class="filterGeneral">
-          <div id="filtersType"></div>
-          <div id="filtersGeneration"></div>
-          <div id="sortName"></div>
-          <button type="button" class="homepage" id="buttonhome">Home</button>
+   <!-- Segunda pantalla -->
+    <section class="pageSecond" id="secondPage2">
+        <section id="principalMenu">
+          <div class="titleSecond">
+            <img
+            src="data\Img\Titulopokelovers.png"
+            alt="Titulopágina2"
+            id="titlesecondPage"
+           />
+          </div>
+          <div class="containerHomePage">
+            <div class="filterGeneral">
+              <div id="filtersType"></div>
+              <div id="filtersGeneration"></div>
+              <div id="sortName"></div>
+              <button type="button" class="homepage" id="buttonhome">Home</button>
+            </div>
         </div>
-    </div>
-    </section>
-      <section class="pageSecond" id="secondPage2">
+        </section>
 
+        <!-- El root es el contenedor de todas las tarjetas. Esta asociado con HTML desde main -->
       <div id="root"></div>
     </section>
+
+    <!-- Sección superior página 3 - Contenedor Home y titulo -->
     <section id="principalMenuPage3">
       <div class="titleSecond3">
         <img src="data\Img\Titulopokelovers.png" alt="Titulopágina2" id="titlesecondPage"/>
@@ -100,16 +104,14 @@
         <button type="button" class="homepage3" id="buttonhomepage3">Home</button>
     </div>
     </section>
+
+    <!-- Página 3, contenedor gráfica de estadísticas -->
     <section class="pageThird" id="thirdPage3">
-      <div class="containerHomePage3">
-      </div>
       <div class="section3" id="sectionThree">
-        
-        <div id="containerStatistics">
-        <canvas id="myChartSpawn"></canvas>
-        </div>
       </div>
-      
+      <div id="containerStatistics">
+      <canvas id="myChartSpawn"></canvas>
+      </div>
     </section>
     <script src="main.js" type="module"></script>
     
