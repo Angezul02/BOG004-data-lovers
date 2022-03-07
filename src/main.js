@@ -245,7 +245,8 @@ document.getElementById("buttonTwo").addEventListener("click", () => {
   let arraySpawnChanceTop = spawnArray.map(e=> e['spawn-chance'])
   
   let ctx= document.getElementById("myChartSpawn").getContext("2d");
-  let myChartSpawn= new Chart(ctx, {
+  // eslint-disable-next-line
+ let myChartSpawn= new Chart(ctx, {
     type:'doughnut',
       data:{
         datasets:[{
