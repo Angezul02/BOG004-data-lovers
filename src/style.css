@@ -59,7 +59,7 @@ body {
   margin-left: 16%;
 }
 .menuButtons {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   font-family: "Handlee", cursive;
   border-radius: 20px 20px;
@@ -85,8 +85,8 @@ body {
 #buttonThree {
   margin-top: 5%;
   margin-bottom: 5%;
-  background: #f2d6a2d0;
-  border: 2px inset #dab879d7;
+  background: white;
+  border: 2px inset white;
   padding-top: 1%;
 }
 #buttonFour {
@@ -165,7 +165,7 @@ body {
 }
 
 #titlesecondPage {
-  max-width: 40%;
+  max-width: 0;
 }
 
 #containerHomePage {
@@ -189,7 +189,7 @@ body {
   display: flex;
   position: absolute;
   top: 2%;
-  left: 90%;
+  left: 75%;
 }
 
 #search {
@@ -377,9 +377,9 @@ body {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 1px;
-  right: 50px;
-  gap: 1px;
+  right: 10px;
+  top: 15px;
+  gap: 5px;
 }
 
 #selectTypePokemon,
@@ -438,6 +438,10 @@ body {
     margin-top: 4%;
     margin-bottom: 5%;
   }
+  #buttonThree {
+    background:  rgb(250, 225, 247);
+    border: 2px inset  rgb(250, 225, 247);
+  }
   .pageThird {
     /*  border: 2px solid red; */
     margin-top: 20px;
@@ -459,5 +463,23 @@ body {
     /* border: 2px solid blue; */
     width: 450px;
     height: 300px;
+  }
+  .filterGeneral {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    gap: 10px;
+  }
+  .titleSecond {
+    top: 3px;
+    margin-left: 20px;
+    display: flex;
+    position: absolute;
+  }
+  #titlesecondPage {
+    max-width: 170px;
   }
 }
