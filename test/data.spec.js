@@ -130,7 +130,7 @@ describe('dataPokemonSort',()=>{
   it('debería ser una función', ()=>{
     expect(typeof dataPokemonSort).toBe('function');
   })
-  it('debería estar en la posición 0', () =>{
+  it('debería estar en la posición 6', () =>{
     const result = dataPokemonSort(muestraInfoPoke, "name");
     expect(result[6].name).toEqual('jolteon');
   });
